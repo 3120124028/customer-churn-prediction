@@ -386,7 +386,7 @@ with tab_predict:
                 f"""
                 <div class="prediction-box {box_class}">
                     <h2>{box_title}</h2>
-                    <p style="margin-top: 10px; font-size: 1.08rem;">Xac suat churn: <strong>{churn_probability:.2%}</strong></p>
+                    <p style="margin-top: 10px; font-size: 1.08rem;">Xác suất churn: <strong>{churn_probability:.2%}</strong></p>
                     <p style="margin-top: 8px; font-size: 1.0rem;">{action_text}</p>
                 </div>
                 """,
@@ -416,14 +416,14 @@ with tab_predict:
             feature_chart.update_layout(height=420, margin=dict(l=10, r=10, t=50, b=10))
             st.plotly_chart(feature_chart, use_container_width=True)
 
-        st.markdown("### Giai thich nguyen nhan")
+        st.markdown("### Giải thích nguyên nhân")
         importance_series = pd.Series(getattr(model, "feature_importances_", np.zeros(len(feature_columns))), index=feature_columns)
         explanation_df = compare_df.assign(Importance=importance_series.reindex(compare_df["Feature"]).values)
         explanation_df = explanation_df.sort_values("Importance", ascending=False).head(8)
         explanation_df["Xu huong"] = np.where(
             explanation_df["Gap"] > 0,
-            "cao hon median",
-            np.where(explanation_df["Gap"] < 0, "thap hon median", "bang median"),
+            "cao hơn median",
+            np.where(explanation_df["Gap"] < 0, "thấp hơn median", "bằng median"),
         )
         st.dataframe(
             explanation_df[["Feature", "Customer", "Median", "Gap", "Importance", "Xu huong"]].round(4),
