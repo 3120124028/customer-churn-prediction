@@ -326,7 +326,7 @@ st.markdown(
     """
     <div class="hero">
         <h1>Churn Prediction Dashboard</h1>
-        <p>Ứng dụng Streamlit tích hợp mô hình Machine Learning đã huấn luyện, hỗ trợ nhập dữ liệu, dự đoán và giải thích kết quả bằng biểu đồ trực quan.</p>
+        <p>Ứng dụng Streamlit tích hợp mô hình Machine Learning đã được huấn luyện, hỗ trợ nhập dữ liệu, dự đoán và giải thích kết quả bằng biểu đồ trực quan.</p>
     </div>
     """,
     unsafe_allow_html=True,

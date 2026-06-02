@@ -1,0 +1,14 @@
+rank,feature,importance
+1,avg_active_days_3m,0.20078643
+2,monthly_active_days,0.1422479
+3,account_tenure_months,0.12591885
+4,has_active_promo_enc,0.0997396
+5,usage_minutes_12m,0.07981396
+6,payment_delay_days,0.07181042
+7,subscription_type_enc,0.068259746
+8,avg_daily_usage_minutes,0.06649915
+9,satisfaction_score,0.04757248
+10,support_tickets_30d,0.040428627
+11,monthly_charges,0.029588915
+12,app_rating,0.015321232
+13,usage_minutes_3m,0.012012725
